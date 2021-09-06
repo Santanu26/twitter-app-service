@@ -1,6 +1,6 @@
 package com.microservices.demo.twitter.to.kafka.service.service.impl;
 
-import com.microservices.demo.twitter.to.kafka.service.service.config.TwitterToKafkaConfigurationData;
+import com.microservices.demo.config.TwitterToKafkaConfigurationData;
 import com.microservices.demo.twitter.to.kafka.service.service.listener.TwitterToKafkaStatusListener;
 import com.microservices.demo.twitter.to.kafka.service.service.runner.StreamRunner;
 import com.microservices.demo.twitter.to.kafka.service.service.util.Constant;
@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import twitter4j.Status;
-import twitter4j.TwitterException;
 import twitter4j.TwitterObjectFactory;
 
 import java.time.ZonedDateTime;
@@ -37,7 +36,7 @@ public class MockKafkaStreamRunner implements StreamRunner {
     }
 
     @Override
-    public void start() throws TwitterException {
+    public void start() {
         final String[] words = twitterToKafkaConfigurationData.getTwitterKeywords().toArray(new String[0]);
         final int maxTweetLength = twitterToKafkaConfigurationData.getMockMaxTweetLength();
         final int minTweetLength = twitterToKafkaConfigurationData.getMockMinTweetLength();
