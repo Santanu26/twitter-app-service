@@ -27,7 +27,7 @@ public class TwitterToKafkaApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(TwitterToKafkaApplication.class,args);
+        SpringApplication.run(TwitterToKafkaApplication.class, args);
     }
 
     @Override
