@@ -6,7 +6,9 @@
         <module>twitter-to-kafka-service</module>
         <module>app-config-data</module>
         <module>kafka</module>
-        <module>kafka-model</module>
+        <module>kafka/kafka-model</module>
+        <module>kafka/kafka-admin</module>
+        <module>kafka/kafka-producer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,6 +26,7 @@
         <java.version>11</java.version>
         <spring-boot.version>2.5.4</spring-boot.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <avro.version>1.10.2</avro.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -43,6 +46,12 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.avro/avro-maven-plugin -->
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -67,5 +76,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
