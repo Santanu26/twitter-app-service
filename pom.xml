@@ -27,6 +27,7 @@
         <spring-boot.version>2.5.4</spring-boot.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <avro.version>1.10.2</avro.version>
+        <spring-kafka.version>2.7.6</spring-kafka.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -39,6 +40,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
             </dependency>
 
             <dependency>
